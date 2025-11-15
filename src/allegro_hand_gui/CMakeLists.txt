@@ -11,6 +11,7 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(yaml-cpp REQUIRED)
+find_package(ament_index_cpp REQUIRED)
 
 # Include directories
 include_directories(
@@ -45,7 +46,7 @@ add_executable(${PROJECT_NAME}_node ${SOURCES} ${UIS})
 target_link_libraries(${PROJECT_NAME}_node
   Qt5::Widgets yaml-cpp
 )
-ament_target_dependencies(${PROJECT_NAME}_node rclcpp std_msgs yaml-cpp)
+ament_target_dependencies(${PROJECT_NAME}_node rclcpp std_msgs yaml-cpp ament_index_cpp)
 # Install targets
 install(TARGETS ${PROJECT_NAME}_node
   DESTINATION lib/${PROJECT_NAME}

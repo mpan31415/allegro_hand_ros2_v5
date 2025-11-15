@@ -9,16 +9,23 @@ find_package(rclcpp REQUIRED)
 find_package(moveit_ros_planning_interface REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(yaml_cpp_vendor REQUIRED)
+find_package(yaml-cpp REQUIRED)
 find_package(std_msgs REQUIRED)
 
 
 add_executable(save_joint_angles src/save_joint_angles.cpp)
+
+target_link_libraries(save_joint_angles
+  yaml-cpp
+)
+
 ament_target_dependencies(save_joint_angles 
   rclcpp 
   std_msgs 
   sensor_msgs 
   moveit_ros_planning_interface 
   yaml_cpp_vendor
+  yaml-cpp
 )
 
 ament_package()

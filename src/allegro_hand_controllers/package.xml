@@ -22,6 +22,7 @@
     <depend>yaml_cpp_vendor</depend>
     <depend>launch</depend>
     <depend>launch_ros</depend>
+    <depend>ament_index_cpp</depend>
     <!-- <run_depend>allegro_hand_description</run_depend> -->
     <!-- <run_depend>allegro_hand_parameters</run_depend> -->
 
