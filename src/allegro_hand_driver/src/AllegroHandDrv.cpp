@@ -268,7 +268,7 @@ void AllegroHandDrv::_parseMessage(int id, int len, unsigned char* data)
         else HAND_TYPE_A = false;
 
         if(data[3] == 'R') RIGHT_HAND = true;
-        else RIGHT_HAND  = false;       
+        else RIGHT_HAND  = true;       // only use right hand for now
           
         }
             break;
@@ -286,10 +286,15 @@ void AllegroHandDrv::_parseMessage(int id, int len, unsigned char* data)
 
             lIndexBase = findex * 4;
 
-            _curr_position[lIndexBase+0] = (double)(tmppos[0]) * (M_PI / 180.0) * 0.088;//* ( 333.3 / 65536.0 ) * ( M_PI/180.0);
-            _curr_position[lIndexBase+1] = (double)(tmppos[1]) * (M_PI / 180.0) * 0.088;//* ( 333.3 / 65536.0 ) * ( M_PI/180.0);
-            _curr_position[lIndexBase+2] = (double)(tmppos[2]) * (M_PI / 180.0) * 0.088;//* ( 333.3 / 65536.0 ) * ( M_PI/180.0);
-            _curr_position[lIndexBase+3] = (double)(tmppos[3]) * (M_PI / 180.0) * 0.088;//* ( 333.3 / 65536.0 ) * ( M_PI/180.0);
+            // _curr_position[lIndexBase+0] = (double)(tmppos[0]) * (M_PI / 180.0) * 0.088;//* ( 333.3 / 65536.0 ) * ( M_PI/180.0);
+            // _curr_position[lIndexBase+1] = (double)(tmppos[1]) * (M_PI / 180.0) * 0.088;//* ( 333.3 / 65536.0 ) * ( M_PI/180.0);
+            // _curr_position[lIndexBase+2] = (double)(tmppos[2]) * (M_PI / 180.0) * 0.088;//* ( 333.3 / 65536.0 ) * ( M_PI/180.0);
+            // _curr_position[lIndexBase+3] = (double)(tmppos[3]) * (M_PI / 180.0) * 0.088;//* ( 333.3 / 65536.0 ) * ( M_PI/180.0);
+            
+            _curr_position[lIndexBase+0] = (double)(tmppos[0]) * ( 333.3 / 65536.0 ) * ( M_PI/180.0);
+            _curr_position[lIndexBase+1] = (double)(tmppos[1]) * ( 333.3 / 65536.0 ) * ( M_PI/180.0);
+            _curr_position[lIndexBase+2] = (double)(tmppos[2]) * ( 333.3 / 65536.0 ) * ( M_PI/180.0);
+            _curr_position[lIndexBase+3] = (double)(tmppos[3]) * ( 333.3 / 65536.0 ) * ( M_PI/180.0);
 
             _curr_position_get |= (0x01 << (findex));
         }
