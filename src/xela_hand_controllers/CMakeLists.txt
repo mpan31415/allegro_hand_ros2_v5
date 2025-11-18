@@ -48,7 +48,7 @@ install(TARGETS
 
 install(DIRECTORY launch/
   DESTINATION share/${PROJECT_NAME}/launch
-  FILES_MATCHING PATTERN "*.launch.py"
+  # FILES_MATCHING PATTERN "*.launch.py"
 )
 
 install(DIRECTORY scripts/

@@ -76,7 +76,15 @@ def generate_launch_description():
         ]
 
         while True:
-            password = getpass.getpass('Enter sudo password: ')
+            
+            # user input password
+            # password = getpass.getpass('Enter sudo password: ')
+
+            # read password from txt file
+            file_abs_dir = os.path.dirname(os.path.abspath(__file__))
+            with open(os.path.join(file_abs_dir, 'pass.txt'), 'r') as f:
+                password = f.read().strip()
+
             success = True
 
             for cmd in commands:
