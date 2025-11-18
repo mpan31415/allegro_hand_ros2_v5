@@ -111,8 +111,8 @@ def generate_launch_description():
             package='xela_hand_controllers',
             executable='allegro_node_grasp',
             output='screen',
-            parameters=[{'hand_info/which_hand': LaunchConfiguration('HAND')}, # Pass HAND argument to parameter
-			            {'hand_info/which_type': LaunchConfiguration('TYPE')},
+            parameters=[{'hand_info/which_hand': LaunchConfiguration('HAND', default="right")}, # right XELA hand
+			            {'hand_info/which_type': LaunchConfiguration('TYPE', default="B")},     # type B (geared)
             		    {'comm/CAN_CH': LaunchConfiguration('CAN_DEVICE')}],
             arguments=[LaunchConfiguration('POLLING')],
 			remappings=[
@@ -138,7 +138,7 @@ def generate_launch_description():
         ),
         # Include the allegro_viz.launch.py file if VISUALIZE is true
         IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(os.path.join(xela_hand_controllers_share, 'launch', 'allegro_viz.launch.py')),
+            PythonLaunchDescriptionSource(os.path.join(xela_hand_controllers_share, 'launch', 'xela_viz.launch.py')),
             condition=IfCondition(LaunchConfiguration('VISUALIZE')),
             launch_arguments={'NUM': LaunchConfiguration('NUM')}.items()
         ),
