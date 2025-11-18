@@ -9,7 +9,7 @@ import os
 import getpass
 
 def generate_launch_description():
-    allegro_hand_controllers_share = get_package_share_directory('allegro_hand_controllers')
+    xela_hand_controllers_share = get_package_share_directory('xela_hand_controllers')
     allegro_hand_moveit_share = get_package_share_directory('allegro_hand_moveit')
 
     # Declare launch argument
@@ -95,7 +95,7 @@ def generate_launch_description():
         return []
 
     urdf_path = PythonExpression([
-        '"', allegro_hand_controllers_share, '/urdf/allegro_hand_description_', LaunchConfiguration('HAND'),'_', LaunchConfiguration('TYPE'),'.urdf"'
+        '"', xela_hand_controllers_share, '/urdf/my_xela_allegro', '.urdf"'
     ])
 
     return LaunchDescription([
@@ -108,7 +108,7 @@ def generate_launch_description():
 		declare_sim_arg,
         OpaqueFunction(function=setup_can),
         Node(
-            package='allegro_hand_controllers',
+            package='xela_hand_controllers',
             executable='allegro_node_grasp',
             output='screen',
             parameters=[{'hand_info/which_hand': LaunchConfiguration('HAND')}, # Pass HAND argument to parameter
@@ -133,12 +133,12 @@ def generate_launch_description():
             remappings=[
                 ('tf', PythonExpression(["'allegroHand_",LaunchConfiguration('NUM'),"/tf'"])),
                 ('joint_states',PythonExpression(["'allegroHand_",LaunchConfiguration('NUM'),"/joint_states'"])),
-                ('robot_description', 'allegro_hand_description')
+                ('robot_description', 'xela_hand_description')
             ]
         ),
         # Include the allegro_viz.launch.py file if VISUALIZE is true
         IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(os.path.join(allegro_hand_controllers_share, 'launch', 'allegro_viz.launch.py')),
+            PythonLaunchDescriptionSource(os.path.join(xela_hand_controllers_share, 'launch', 'allegro_viz.launch.py')),
             condition=IfCondition(LaunchConfiguration('VISUALIZE')),
             launch_arguments={'NUM': LaunchConfiguration('NUM')}.items()
         ),

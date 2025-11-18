@@ -7,11 +7,11 @@ from launch.substitutions import LaunchConfiguration, PythonExpression
 from launch_ros.actions import Node
 
 def generate_launch_description():
-    allegro_hand_controllers_share = get_package_share_directory('allegro_hand_controllers')
+    xela_hand_controllers_share = get_package_share_directory('xela_hand_controllers')
     
     declare_num_arg = DeclareLaunchArgument('NUM', default_value='0')
 
-    rviz_config_file = os.path.join(allegro_hand_controllers_share, 'urdf', 'allegro_hand_config.rviz')
+    rviz_config_file = os.path.join(xela_hand_controllers_share, 'urdf', 'xela_hand_config.rviz')
 
     return LaunchDescription([
         Node(
