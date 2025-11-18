@@ -56,8 +56,8 @@ install(DIRECTORY scripts/
   FILES_MATCHING PATTERN "*.sh"
 )
 
-install(DIRECTORY meshes/
-  DESTINATION share/${PROJECT_NAME}/meshes
+install(DIRECTORY mesh/
+  DESTINATION share/${PROJECT_NAME}/mesh
   FILES_MATCHING PATTERN "*.stl"
 )
 

@@ -121,7 +121,7 @@
   <link name="index_link_1">
     <visual>
       <geometry>
-        <mesh filename="package://xela_hand_controllers/mesh/allegro/link_0_ext.STL"/>
+        <mesh filename="package://xela_hand_controllers/mesh/allegro/link_0_ext.stl"/>
       </geometry>
       <material name="grey"/>
     </visual>
@@ -301,7 +301,7 @@
   <link name="index_link_4">
     <visual>
       <geometry>
-        <mesh filename="package://xela_hand_controllers/mesh/allegro/link_3.STL"/>
+        <mesh filename="package://xela_hand_controllers/mesh/allegro/link_3.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
@@ -347,7 +347,7 @@
   <link name="middle_link_1">
     <visual>
       <geometry>
-        <mesh filename="package://xela_hand_controllers/mesh/allegro/link_0_ext.STL"/>
+        <mesh filename="package://xela_hand_controllers/mesh/allegro/link_0_ext.stl"/>
       </geometry>
       <material name="grey"/>
     </visual>
@@ -527,7 +527,7 @@
   <link name="middle_link_4">
     <visual>
       <geometry>
-        <mesh filename="package://xela_hand_controllers/mesh/allegro/link_3.STL"/>
+        <mesh filename="package://xela_hand_controllers/mesh/allegro/link_3.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
@@ -573,7 +573,7 @@
   <link name="ring_link_1">
     <visual>
       <geometry>
-        <mesh filename="package://xela_hand_controllers/mesh/allegro/link_0_ext.STL"/>
+        <mesh filename="package://xela_hand_controllers/mesh/allegro/link_0_ext.stl"/>
       </geometry>
       <material name="grey"/>
     </visual>
@@ -753,7 +753,7 @@
   <link name="ring_link_4">
     <visual>
       <geometry>
-        <mesh filename="package://xela_hand_controllers/mesh/allegro/link_3.STL"/>
+        <mesh filename="package://xela_hand_controllers/mesh/allegro/link_3.stl"/>
       </geometry>
       <material name="black"/>
     </visual>
@@ -799,7 +799,7 @@
   <link name="thumb_link_1">
     <visual>
       <geometry>
-        <mesh filename="package://xela_hand_controllers/mesh/allegro/link_12_right.STL"/>
+        <mesh filename="package://xela_hand_controllers/mesh/allegro/link_12_right.stl"/>
       </geometry>
       <material name="grey"/>
     </visual>
@@ -825,8 +825,8 @@
   <link name="thumb_link_2">
     <visual>
       <geometry>
-        <mesh filename="package://xela_hand_controllers/mesh/allegro/link_0_ext.STL"/>
-        <!-- link_13.STL -->
+        <mesh filename="package://xela_hand_controllers/mesh/allegro/link_0_ext.stl"/>
+        <!-- link_13.stl -->
       </geometry>
       <material name="grey"/>
     </visual>
