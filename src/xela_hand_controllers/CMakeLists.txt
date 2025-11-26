@@ -61,6 +61,11 @@ install(DIRECTORY mesh/
   FILES_MATCHING PATTERN "*.stl"
 )
 
+install(DIRECTORY mesh_simplified/
+  DESTINATION share/${PROJECT_NAME}/mesh_simplified
+  # FILES_MATCHING PATTERN "*.stl"
+)
+
 install(DIRECTORY pose/
   DESTINATION share/${PROJECT_NAME}/pose
   FILES_MATCHING PATTERN "*.yaml"

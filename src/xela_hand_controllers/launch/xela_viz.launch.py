@@ -11,7 +11,8 @@ def generate_launch_description():
     
     declare_num_arg = DeclareLaunchArgument('NUM', default_value='0')
 
-    rviz_config_file = os.path.join(xela_hand_controllers_share, 'urdf', 'xela_hand_config.rviz')
+    # rviz_config_file = os.path.join(xela_hand_controllers_share, 'urdf', 'xela_hand_config.rviz')
+    rviz_config_file = os.path.join(xela_hand_controllers_share, 'urdf', 'xela_allegro_config.rviz')
 
     return LaunchDescription([
         Node(
