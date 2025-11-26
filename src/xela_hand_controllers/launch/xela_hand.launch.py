@@ -103,8 +103,8 @@ def generate_launch_description():
         return []
 
     urdf_path = PythonExpression([
-        # '"', xela_hand_controllers_share, '/urdf/my_xela_allegro', '.urdf"'
-        '"', xela_hand_controllers_share, '/urdf/xela_allegro', '.urdf"'
+        '"', xela_hand_controllers_share, '/urdf/my_xela_allegro', '.urdf"'
+        # '"', xela_hand_controllers_share, '/urdf/xela_allegro', '.urdf"'
     ])
 
     return LaunchDescription([
@@ -115,7 +115,7 @@ def generate_launch_description():
         declare_moveit_arg,
 		declare_gui_arg,
 		declare_sim_arg,
-        # OpaqueFunction(function=setup_can),
+        OpaqueFunction(function=setup_can),
         Node(
             package='xela_hand_controllers',
             executable='allegro_node_grasp',
